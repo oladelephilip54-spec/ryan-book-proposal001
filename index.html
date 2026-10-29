@@ -1,189 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>No One Comes to Work to Fail — Growth Proposal for Ryan</title>
-  <meta name="description" content="A book sales and audience growth proposal prepared for Ryan by Philip Oladele." />
-  <meta name="theme-color" content="#06231a" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No One Comes to Work to Fail: a proposal for Ryan</title>
+<meta name="description" content="A book sales and audience growth proposal for Ryan, from Philip Oladele.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f0e8; --ink:#1a1814; --muted:#6b655a; --rule:#cfc8b8;
+  --accent:#c2410c; --wash:#ebe5d7;
+  --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --gutter:clamp(1.1rem,4vw,3rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:clamp(1.02rem,.96rem + .3vw,1.2rem);line-height:1.65;overflow-x:hidden}
+a{color:inherit}
+::selection{background:var(--accent);color:#fff}
+
+/* masthead */
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem var(--gutter);border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+.mast nav{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:flex-end}
+.mast a{text-decoration:none;color:var(--muted)}
+.mast a:hover{color:var(--accent)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter)}
+
+/* title block */
+.title{padding:clamp(3rem,9vw,7rem) 0 clamp(2.5rem,6vw,4.5rem);border-bottom:1px solid var(--rule)}
+.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1.4rem}
+h1{font-weight:700;font-size:clamp(2.5rem,8.4vw,6.2rem);line-height:.98;letter-spacing:-.025em;max-width:13ch}
+h1 span{font-style:italic;font-weight:400}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem 2rem;margin-top:clamp(2rem,5vw,3.5rem);font-size:.95rem}
+.meta dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+
+/* sections: label column + body */
+.sec{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:1rem clamp(1.5rem,5vw,4rem);padding:clamp(2.5rem,6vw,4.5rem) 0;border-bottom:1px solid var(--rule)}
+.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.label b{display:block;font-size:2.4rem;font-weight:400;color:var(--accent);letter-spacing:0;line-height:1;margin-bottom:.4rem}
+.body>*+*{margin-top:1.15em}
+h2{font-size:clamp(1.7rem,4.2vw,2.7rem);line-height:1.12;letter-spacing:-.015em;font-weight:600;max-width:20ch}
+h3{font-size:1.2em;font-weight:600;line-height:1.3;margin-top:2em}
+.body p{max-width:62ch}
+.body em{font-style:italic}
+.pull{border-left:3px solid var(--accent);padding-left:1.1rem;font-size:1.18em;font-style:italic;max-width:46ch}
+.hl{background:linear-gradient(transparent 62%,rgba(194,65,12,.28) 62%)}
+
+/* letter */
+.letter p:first-letter{font-size:3.6em;float:left;line-height:.85;padding:.08em .1em 0 0;font-weight:700;color:var(--accent)}
+
+/* lists */
+.list{list-style:none;border-top:1px solid var(--ink)}
+.list li{display:grid;grid-template-columns:2.2rem 1fr;gap:.5rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.list li>i{font:normal 400 .8rem var(--mono);color:var(--accent);padding-top:.35rem}
+.list strong{display:block;font-weight:600}
+.list span{color:var(--muted);font-size:.95em}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:.98em;max-width:none}
+.tbl th{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--muted);padding:.6rem 0;border-bottom:1px solid var(--ink)}
+.tbl td{padding:.85rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.tbl td:last-child,.tbl th:last-child{text-align:right;white-space:nowrap;padding-left:1rem;font-variant-numeric:tabular-nums}
+.tbl tr.sum td{border-bottom:0;border-top:2px solid var(--ink);font-weight:700;font-size:1.15em;padding-top:1rem}
+.tbl small{display:block;color:var(--muted);font-size:.86em}
+
+/* aside note */
+.note{background:var(--wash);padding:1rem 1.2rem;font-size:.92em;max-width:62ch;border-left:3px solid var(--ink)}
+.note b{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+
+/* chain */
+.chain{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);margin-top:1.4rem}
+.chain div{padding:1rem;border-right:1px solid var(--ink)}
+.chain div:last-child{border:0;background:var(--ink);color:var(--paper)}
+.chain b{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;display:block;opacity:.7;margin-bottom:.3rem}
+
+/* weeks */
+.weeks{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink)}
+.weeks div{padding:1.1rem 1.1rem 1.3rem 0;border-bottom:1px solid var(--rule)}
+.weeks div:nth-child(even){padding-left:1.1rem;border-left:1px solid var(--rule)}
+.weeks b{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block}
+.weeks h3{margin:.2rem 0 .3rem}
+.weeks p{font-size:.95em;color:var(--muted)}
+
+/* sign-off */
+.sign{padding:clamp(3rem,8vw,6rem) 0}
+.sign .big{font-size:clamp(1.8rem,5vw,3.4rem);line-height:1.1;font-weight:600;max-width:18ch;letter-spacing:-.02em}
+.btn{display:inline-block;margin-top:1.8rem;padding:.9rem 1.5rem;background:var(--ink);color:var(--paper);text-decoration:none;font:500 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;transition:background .2s}
+.btn:hover{background:var(--accent)}
+.sig{margin-top:2.5rem;font-style:italic}
+.sig b{font-style:normal;display:block;font-size:1.15em}
+footer{border-top:1px solid var(--ink);padding:1.2rem var(--gutter);font:400 .72rem var(--mono);letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+/* small screens */
+@media (max-width:760px){
+  .sec{grid-template-columns:1fr;padding:2.2rem 0}
+  .label{display:flex;align-items:baseline;gap:.7rem}
+  .label b{font-size:1.6rem;margin:0}
+  .mast nav a:not(:last-child){display:none}
+  .weeks{grid-template-columns:1fr}
+  .weeks div:nth-child(even){padding-left:0;border-left:0}
+  .chain{grid-template-columns:1fr}
+  .chain div{border-right:0;border-bottom:1px solid var(--ink)}
+  .chain div:last-child{border:0}
+}
+@media print{
+  .mast nav,.btn{display:none}
+  body{background:#fff;font-size:11pt}
+  .sec{break-inside:avoid}
+}
+</style>
 </head>
 <body>
-  <div class="progress" id="progress"></div>
-  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
-  <header class="nav" id="nav">
-    <a href="#top" class="logo">No One<span>.</span></a>
-    <nav id="menu" aria-label="Main">
-      <a href="#opportunity">Opportunity</a>
-      <a href="#plan">Plan</a>
-      <a href="#tracking">Tracking</a>
-      <a href="#budget">Budget</a>
-      <a href="#timeline">30 days</a>
-      <a href="#start" class="btn btn-sm">Get started</a>
-    </nav>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
-  </header>
+<header class="mast">
+  <span>Proposal · October 2026</span>
+  <nav>
+    <a href="#letter">Letter</a><a href="#plan">The plan</a><a href="#tracking">Tracking</a>
+    <a href="#budget">Budget</a><a href="#pay">Payment</a><a href="#start">Next step</a>
+  </nav>
+</header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <p class="pill reveal"><i class="dot"></i> Book Sales &amp; Audience Growth Proposal</p>
-      <h1 class="reveal">No one comes to work <em>to fail.</em></h1>
-      <p class="lead reveal">A measurable plan to take Ryan's book beyond his own network, built around results rather than promises.</p>
-      <div class="cta reveal">
-        <a href="#plan" class="btn">See the plan</a>
-        <a href="#budget" class="btn btn-ghost">View budget</a>
+<main class="wrap">
+
+  <section class="title">
+    <p class="kicker">A book sales and audience growth proposal</p>
+    <h1>No One Comes to Work <span>to Fail</span></h1>
+    <dl class="meta">
+      <div><dt>Prepared for</dt><dd>Ryan</dd></div>
+      <div><dt>Prepared by</dt><dd>Philip Oladele</dd></div>
+      <div><dt>First commitment</dt><dd>$700, one time</dd></div>
+      <div><dt>Ongoing pay</dt><dd>Tied to attributable sales</dd></div>
+    </dl>
+  </section>
+
+  <section class="sec" id="letter">
+    <div class="label"><b>01</b>The opportunity</div>
+    <div class="body letter">
+      <h2>You already know what a sale is worth.</h2>
+      <p>Ryan, what stood out in our conversation was not only that you want to sell more copies. It was that you understand the economics. You know what you earn on each sale, you have an audience on Facebook and LinkedIn, and you sold about <span class="hl">212 copies in three and a half weeks</span> largely through your own network, without a serious promotional push.</p>
+      <p>That tells us people who know you will buy. The open question is whether people who don't know you, but need what the book teaches, will too.</p>
+      <p>I don't think the answer is simply more Facebook ads. I would rather build several routes to readers, test which ones produce sales, and put more effort into the ones that prove themselves.</p>
+      <p class="pull">You are willing to reward results rather than pay someone indefinitely without knowing if their work sells books. I am comfortable building our arrangement on that.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="label"><b>02</b>Who buys it</div>
+    <div class="body">
+      <h2>Four kinds of buyer, four different approaches.</h2>
+      <ol class="list">
+        <li><i>i.</i><div><strong>Individual readers</strong><span>New managers, supervisors, team leaders and department heads learning on the job who would use a practical framework.</span></div></li>
+        <li><i>ii.</i><div><strong>People who influence what others read</strong><span>Book reviewers and creators on Instagram and Facebook who feature a book of the week or month, especially in leadership and workplace culture.</span></div></li>
+        <li><i>iii.</i><div><strong>Organisations</strong><span>Chambers of commerce, municipalities, business associations and training teams. One order of 50 or 100 copies can outweigh dozens of single sales, so it gets its own approach.</span></div></li>
+        <li><i>iv.</i><div><strong>Speaking audiences</strong><span>I won't promise the book will bring invitations. I will build the material so it supports them when they come.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="plan">
+    <div class="label"><b>03</b>Phase one</div>
+    <div class="body">
+      <h2>Getting the book in front of people who don't know you yet.</h2>
+      <p>Your 5,000 Facebook followers and 3,000 LinkedIn connections are a good foundation, but the campaign shouldn't depend on them. I would work in four parts.</p>
+
+      <h3>A. Search and discoverability</h3>
+      <p>Research the terms people use around first-time managers and leadership, tighten the wording of the book and author pages, and make sure every promotional link leads to the right place to buy. This is slow, foundational work. A few edits will not put the book at the top of Google overnight, and I won't say they will.</p>
+
+      <h3>B. Book influencers and reviewers</h3>
+      <p>I would contact at least ten relevant creators, after reading what they actually feature, not with one copied message. Some will decline, some won't answer. I will report real responses, and an unanswered message is not a result. If anyone wants payment for a feature, it comes to you for approval first, and I won't buy reviews. Each reviewer's independence stays intact.</p>
+
+      <h3>C. Content worth stopping for</h3>
+      <p>A cover image with an Amazon link isn't enough. I would make graphics from the five frameworks and fifteen chapters, the questions new managers keep asking, and the mistakes people make when they first lead a team, each adapted to the platform it appears on.</p>
+
+      <h3>D. A book trailer, $50</h3>
+      <p>One short trailer reusable across Facebook, Instagram, LinkedIn and YouTube. You were worried about it looking obviously AI-made, and I share that worry. The writing, pacing and typography should suit a serious management book. You will see the direction before I finalise it, and I'll send two relevant examples so you can judge the work.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="tracking">
+    <div class="label"><b>04</b>Knowing what worked</div>
+    <div class="body">
+      <h2>Ten messages are activity. A purchase is a sale.</h2>
+      <p>An influencer may reach 20,000 followers, and that number alone doesn't tell us if anyone bought. So I would set up tracking before spending more.</p>
+      <ol class="list">
+        <li><i>1</i><div><strong>A landing page</strong><span>Clean, mobile-friendly, and a single place to send every channel's traffic.</span></div></li>
+        <li><i>2</i><div><strong>Trackable links</strong><span>Tagged links and Amazon Attribution where the retailer supports it, so channels can be compared by sales, not likes.</span></div></li>
+        <li><i>3</i><div><strong>A small retargeting test</strong><span>On Meta, only once there is enough traffic and permission to track, and kept separate so we can see its cost.</span></div></li>
+        <li><i>4</i><div><strong>Plain reporting</strong><span>Work done, responses, traffic, attributable purchases and what I recommend next.</span></div></li>
+      </ol>
+      <div class="chain">
+        <div><b>Activity</b>10 outreach messages</div>
+        <div><b>Placement</b>1 confirmed feature</div>
+        <div><b>Sale</b>1 verified purchase</div>
       </div>
-      <p class="by reveal">Prepared for <b>Ryan</b> by <b>Philip Oladele</b></p>
-    </section>
+      <h3>Institutional sales</h3>
+      <p>For a company training 50 new managers, buying is a different decision from one person buying a Kindle copy. I would prepare a separate pitch on how the book works in onboarding, workshops and development programmes, aimed at specific decision-makers, not hundreds of inboxes. Your contact in Egypt is a reason to look abroad, but I'd find the right audience and route to purchase before spending anything there.</p>
+    </div>
+  </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
-      <div class="track">
-        <span>Book SEO</span><span>Influencer outreach</span><span>Creative content</span><span>Book trailer</span><span>Landing page</span><span>Amazon Attribution</span><span>Institutional sales</span>
-        <span>Book SEO</span><span>Influencer outreach</span><span>Creative content</span><span>Book trailer</span><span>Landing page</span><span>Amazon Attribution</span><span>Institutional sales</span>
+  <section class="sec" id="budget">
+    <div class="label"><b>05</b>Budget</div>
+    <div class="body">
+      <h2>A small first commitment.</h2>
+      <table class="tbl">
+        <thead><tr><th>Deliverable</th><th>Cost</th></tr></thead>
+        <tbody>
+          <tr><td>Initial campaign<small>Search work, outreach to 10+ creators, promotional graphics, planning and tracking setup</small></td><td>$500</td></tr>
+          <tr><td>Book trailer<small>One time</small></td><td>$50</td></tr>
+          <tr><td>Landing page<small>One time, using your existing book information, cover and retailer links</small></td><td>$150</td></tr>
+          <tr class="sum"><td>Total</td><td>$700</td></tr>
+        </tbody>
+      </table>
+      <div class="note"><b>Not included</b>Paid advertising and influencer fees. Those stay under your control and are only spent with your approval. Custom integrations or paid software on the landing page would be agreed separately.</div>
+    </div>
+  </section>
+
+  <section class="sec" id="pay">
+    <div class="label"><b>06</b>Payment</div>
+    <div class="body">
+      <h2>You suggested $2,500 for 1,000 copies. Here is a version of that.</h2>
+      <p><strong>Option A.</strong> After the setup fees, I take <span class="hl">30% of your net author earnings from incremental sales that can reasonably be attributed to the campaign</span>. At your stated $7.50 per copy:</p>
+      <table class="tbl">
+        <thead><tr><th>Incremental copies</th><th>You earn</th><th>My 30%</th></tr></thead>
+        <tbody>
+          <tr><td>100</td><td>$750</td><td>$225</td></tr>
+          <tr><td>250</td><td>$1,875</td><td>$562.50</td></tr>
+          <tr><td>500</td><td>$3,750</td><td>$1,125</td></tr>
+          <tr><td>1,000</td><td>$7,500</td><td>$2,250</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.9em;color:var(--muted)">Illustrations, not forecasts. If your earnings differ by format, retailer, territory or bulk terms, the real figures apply.</p>
+      <h3>What counts as "incremental"?</h3>
+      <p>We agree this before anything starts. We set a baseline from your sales history, then credit what campaign links, retailer attribution, referrals and identifiable bulk orders show. I won't claim every sale during the campaign. Your own posts and word of mouth sell books too. Returns, cancellations and costs are handled the same way every time, and we review the numbers together.</p>
+      <p><strong>Option B</strong> is a fixed monthly fee for a defined scope. Costs are predictable, but you pay whether or not sales follow. Given what you told me, I think Option A is the better start.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="label"><b>07</b>First thirty days</div>
+    <div class="body">
+      <h2>Build it, test it, then decide.</h2>
+      <p>No campaign can guarantee a sales figure, and I won't pretend this one can.</p>
+      <div class="weeks">
+        <div><b>Week 1</b><h3>Prepare</h3><p>Review existing book pages, find search terms, set the sales baseline, build the landing page and first assets.</p></div>
+        <div><b>Week 2</b><h3>Reach out</h3><p>Start influencer outreach, publish the first content, and check the links and tracking work.</p></div>
+        <div><b>Week 3</b><h3>Read the signals</h3><p>See who replied, follow up with promising contacts and begin institutional prospecting.</p></div>
+        <div><b>Week 4</b><h3>Decide</h3><p>Keep what is working, drop what isn't, and run a small retargeting test if the traffic supports it.</p></div>
       </div>
     </div>
+  </section>
 
-    <!-- OPPORTUNITY -->
-    <section class="sec" id="opportunity">
-      <p class="eyebrow reveal">01 · Starting point</p>
-      <h2 class="reveal">The network already buys. <em>The question is who else will.</em></h2>
-      <p class="sub reveal">Ryan has sold roughly 212 copies in three and a half weeks, largely through his own network and without a serious campaign. The next step is reaching people who have the same need but have never heard of him.</p>
+  <section class="sec">
+    <div class="label"><b>08</b>Measures</div>
+    <div class="body">
+      <h2>Not follower counts.</h2>
+      <p>I would judge the work by additional sales and attributable earnings, relevant features and real reader engagement, traffic to purchase pages, the cost of any paid sale, qualified conversations with organisations, and bulk or speaking enquiries. A reviewer may feature the book weeks after I contact them, and a company may take time to approve an order. Those get recorded and followed up, not reported as guaranteed revenue.</p>
+      <h3>What I need from you</h3>
+      <p>Your book links and promotional materials, your sales history for the baseline, any advertising or attribution data you're happy to share, whether you can supply review copies, your bulk-purchase terms, and any publisher restrictions on ads, retailer links or promotion.</p>
+    </div>
+  </section>
 
-      <div class="stats">
-        <div class="stat reveal"><b data-count="212">0</b><span>copies in 3.5 weeks</span></div>
-        <div class="stat reveal"><b data-count="5000">0</b><span>Facebook followers</span></div>
-        <div class="stat reveal"><b data-count="3000">0</b><span>LinkedIn connections</span></div>
-        <div class="stat reveal"><b>$7.50</b><span>earned per copy</span></div>
-      </div>
+  <section class="sign" id="start">
+    <p class="big">Start with a clear plan and let the evidence decide the next step.</p>
+    <p style="margin-top:1.2rem;max-width:56ch">Before any campaign activity, we agree the tracking method, the definition of an incremental sale and the payment terms. You stay in control of ad spend and paid placements.</p>
+    <a class="btn" href="mailto:philip.oladele@philipoladele.com?subject=Book%20campaign%20proposal">Reply to Philip</a>
+    <p class="sig">Philip Oladele<b>Social media strategy, book promotion and digital marketing</b></p>
+  </section>
 
-      <div class="bento">
-        <article class="card reveal"><span class="ico">👤</span><h3>Individual readers</h3><p>New managers, supervisors, team leaders and department heads who want a practical framework.</p></article>
-        <article class="card reveal"><span class="ico">📣</span><h3>Book influencers</h3><p>Instagram and Facebook creators who feature a book of the week or month.</p></article>
-        <article class="card card-wide reveal"><span class="ico">🏛️</span><h3>Institutions</h3><p>Chambers of commerce, municipalities, business associations and L&amp;D teams. One order of 50–100 copies can outweigh dozens of single sales.</p></article>
-        <article class="card reveal"><span class="ico">🎤</span><h3>Speaking</h3><p>The book supports speaking opportunities when they arise. No guarantees promised.</p></article>
-      </div>
-    </section>
+</main>
 
-    <!-- PLAN -->
-    <section class="sec dark" id="plan">
-      <p class="eyebrow reveal">02 · Phase one</p>
-      <h2 class="reveal">Four workstreams to reach <em>strangers.</em></h2>
-      <div class="steps">
-        <article class="step reveal"><i>A</i><h3>Book SEO &amp; discoverability</h3><p>Search-term research around first-time managers and leadership. Clearer book and author pages. Links that point to the right purchase options. Foundational work, not an overnight channel.</p></article>
-        <article class="step reveal"><i>B</i><h3>Influencer &amp; reviewer outreach</h3><p>Personalised outreach to at least 10 relevant creators. Real responses reported, unanswered messages never counted as results. Paid features need your approval first.</p></article>
-        <article class="step reveal"><i>C</i><h3>Shareable creative</h3><p>Graphics from the five frameworks and 15 chapters, new-manager questions, common first-time mistakes, and kits for reviewers who feature the book.</p></article>
-        <article class="step reveal"><i>D</i><h3>Cross-platform book trailer</h3><p>A short trailer for Facebook, Instagram, LinkedIn and YouTube. Written and paced for a serious management book. Direction approved before final.</p></article>
-      </div>
-    </section>
+<footer>
+  <span>Prepared for Ryan</span>
+  <a href="https://philipoladele.com/">philipoladele.com</a>
+</footer>
 
-    <!-- TRACKING -->
-    <section class="sec" id="tracking">
-      <p class="eyebrow reveal">03 · Sales system</p>
-      <h2 class="reveal">Activity isn't results. <em>A verified purchase is a sale.</em></h2>
-      <div class="funnel">
-        <div class="f reveal" style="--w:100%"><b>Seen</b><span>Posts, trailer, influencer features</span></div>
-        <div class="f reveal" style="--w:78%"><b>Clicked</b><span>Tagged links to the landing page</span></div>
-        <div class="f reveal" style="--w:56%"><b>Retargeted</b><span>Small Meta test once tracking allows</span></div>
-        <div class="f gold reveal" style="--w:34%"><b>Purchased</b><span>Verified, attributable</span></div>
-      </div>
-      <p class="note reveal">Illustrative stages, not a forecast.</p>
-      <div class="chips reveal">
-        <span>Dedicated landing page</span><span>Trackable links</span><span>Amazon Attribution</span><span>Retargeting test</span><span>Simple reporting</span>
-      </div>
-    </section>
-
-    <!-- BUDGET -->
-    <section class="sec dark" id="budget">
-      <p class="eyebrow reveal">04 · Budget</p>
-      <h2 class="reveal">$700 to build the foundation. <em>Ad spend stays with you.</em></h2>
-      <div class="prices">
-        <div class="price reveal"><span>Initial campaign fee</span><b>$500</b><p>SEO, outreach to 10+ creators, graphics, planning and tracking setup.</p></div>
-        <div class="price reveal"><span>Book trailer</span><b>$50</b><p>One time.</p></div>
-        <div class="price reveal"><span>Landing page</span><b>$150</b><p>One time, using existing assets and retailer links.</p></div>
-        <div class="price total reveal"><span>Total initial cost</span><b>$700</b><p>Excludes paid ads and sponsored placements, which need your approval.</p></div>
-      </div>
-
-      <!-- CALCULATOR -->
-      <div class="calc reveal" id="compensation">
-        <p class="eyebrow">Option A · Performance partnership</p>
-        <h3>30% of attributable author earnings</h3>
-        <label for="copies">Incremental attributable copies: <b id="copiesOut">500</b></label>
-        <input type="range" id="copies" min="0" max="2000" step="50" value="500" />
-        <div class="calc-grid">
-          <div><span>Ryan earns at $7.50</span><b id="earn">$3,750</b></div>
-          <div><span>Philip's 30% share</span><b id="share" class="gold-t">$1,125</b></div>
-          <div><span>Ryan keeps</span><b id="keep">$2,625</b></div>
-        </div>
-        <p class="note">Illustration, not a sales forecast. Bulk orders may carry different per-copy earnings, so the applicable figure is used.</p>
-      </div>
-      <p class="sub reveal">Prefer a predictable cost? <b>Option B</b> is a fixed monthly fee for a defined scope, payable whether or not sales follow.</p>
-    </section>
-
-    <!-- TIMELINE -->
-    <section class="sec" id="timeline">
-      <p class="eyebrow reveal">05 · First 30 days</p>
-      <h2 class="reveal">Build, test, <em>then decide.</em></h2>
-      <ol class="timeline">
-        <li class="reveal"><i>1</i><h3>Prepare</h3><p>Review book pages, find search terms, set the sales baseline, build the landing page and first assets.</p></li>
-        <li class="reveal"><i>2</i><h3>Reach out</h3><p>Begin influencer outreach, launch content, verify links and tracking.</p></li>
-        <li class="reveal"><i>3</i><h3>Read signals</h3><p>Log responses, follow up, start institutional prospecting.</p></li>
-        <li class="reveal"><i>4</i><h3>Decide</h3><p>Keep what works, drop what doesn't, optionally run a small retargeting test.</p></li>
-      </ol>
-    </section>
-
-    <!-- SUCCESS + NEEDS -->
-    <section class="sec dark">
-      <p class="eyebrow reveal">06 · Success &amp; kickoff</p>
-      <h2 class="reveal">Judged by sales and conversations, <em>not follower counts.</em></h2>
-      <div class="two">
-        <div class="box reveal">
-          <h3>What success looks like</h3>
-          <ul>
-            <li>Additional sales and attributable earnings</li>
-            <li>Influencer features and real reader engagement</li>
-            <li>Traffic reaching purchase pages</li>
-            <li>Cost per attributable paid sale</li>
-            <li>Qualified institutional conversations</li>
-            <li>Bulk orders and speaking enquiries</li>
-          </ul>
-        </div>
-        <div class="box reveal">
-          <h3>Needed from Ryan</h3>
-          <ul>
-            <li>Existing book links and promo materials</li>
-            <li>Sales history for the baseline</li>
-            <li>Any ad or attribution data you can share</li>
-            <li>Review-copy availability for creators</li>
-            <li>Bulk-purchase terms</li>
-            <li>Any publisher restrictions on ads or links</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="sec cta-sec" id="start">
-      <h2 class="reveal">Start with a clear plan. <em>Let the evidence guide the next step.</em></h2>
-      <p class="sub reveal">We agree the tracking method, the definition of an incremental sale and the payment terms before any campaign activity begins.</p>
-      <div class="cta reveal">
-        <a class="btn" href="mailto:hello@philipoladele.com?subject=Book%20campaign%20proposal">Accept &amp; get started</a>
-        <a class="btn btn-ghost" href="https://philipoladele.com/" target="_blank" rel="noopener">View portfolio</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <b>Philip Oladele</b>
-    <span>Social Media Strategy, Book Promotion and Digital Marketing</span>
-    <a href="https://philipoladele.com/" target="_blank" rel="noopener">philipoladele.com</a>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
