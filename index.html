@@ -1,334 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>No One Comes to Work to Fail — for Ryan, from Philip</title>
-<meta name="description" content="A plan to get No One Comes to Work to Fail in front of readers who don't know Ryan yet.">
-<meta name="theme-color" content="#ffffff">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --g:#0b3b2a; --o:#ff5a1f; --y:#f2c94c; --s:#e9e4d9; --k:#111; --w:#fff;
-  --gap:clamp(.75rem,1.8vw,1.5rem); --pad:clamp(1rem,3vw,2.5rem);
-  --f:'Archivo',system-ui,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--f);background:var(--w);color:var(--k);font-size:clamp(.95rem,.9rem + .25vw,1.1rem);line-height:1.35;padding-bottom:env(safe-area-inset-bottom)}
-a{color:inherit;text-decoration:none}
-svg{display:block;width:100%;height:100%}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No One Comes to Work to Fail — Book Sales Proposal | Philip Oladele</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            atrios: {
+              bg: '#0a1410',
+              card: '#0f1c17',
+              border: '#1a2e26',
+              cream: '#f5f0e6',
+              muted: '#a8b5ad',
+              accent: '#c9b896',
+              green: '#1a3c2e',
+              glow: '#2d5a45',
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #0a1410;
+      --cream: #f5f0e6;
+      --accent: #c9b896;
+    }
 
-/* top bar */
-.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem var(--pad);border-bottom:1px solid #eee}
-.bar b{font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
-.bar nav{display:flex;gap:clamp(.8rem,2vw,1.6rem);font-weight:500;flex-wrap:wrap;justify-content:flex-end}
-.bar nav a::before{content:"+";margin-right:.2em;color:var(--o)}
-.bar nav a:hover{color:var(--o)}
+    * { box-sizing: border-box; }
 
-/* hero */
-.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--gap);padding:var(--gap) var(--pad) 0}
-.hero .words{background:var(--g);color:var(--w);padding:clamp(1.2rem,3.5vw,3rem);display:flex;flex-direction:column;justify-content:space-between;min-height:min(78svh,720px)}
-.hero h1{font-size:clamp(2.6rem,9vw,8rem);line-height:.88;font-weight:800;font-stretch:80%;letter-spacing:-.035em;text-transform:uppercase}
-.hero h1 i{font-style:normal;color:var(--o)}
-.hero p{max-width:26ch;font-size:clamp(1.05rem,2vw,1.5rem);font-weight:500}
-.hero .art{background:var(--y);min-height:320px}
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
 
-/* sections */
-.hd{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:clamp(2.5rem,7vw,5rem) var(--pad) var(--gap)}
-.hd h2{font-size:clamp(1.6rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.025em;line-height:1;font-stretch:85%}
-.hd span{font-weight:500;color:#777}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);padding:0 var(--pad)}
-.s4{grid-column:span 4}.s6{grid-column:span 6}.s8{grid-column:span 8}.s12{grid-column:span 12}
+    /* Smooth entrance */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-/* tile = visual + caption (the big.dk pattern) */
-.tile{display:block}
-.tile .img{aspect-ratio:4/3;overflow:hidden;background:var(--s)}
-.s8 .img{aspect-ratio:16/10}
-.s12 .img{aspect-ratio:21/8}
-.tile .img svg{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
-.tile:hover .img svg{transform:scale(1.045)}
-.tile h3{margin-top:.7rem;font-size:1.05em;font-weight:700;display:flex;gap:.5rem;align-items:baseline}
-.tile h3::before{content:"";width:.7em;height:.7em;background:var(--o);flex:none;transform:translateY(.05em)}
-.tile p{color:#666;margin-top:.1rem;padding-left:1.2em}
+    /* Stagger children */
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+    .stagger.visible > *:nth-child(2) { transition-delay: 0.12s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: 0.19s; }
+    .stagger.visible > *:nth-child(4) { transition-delay: 0.26s; }
+    .stagger.visible > *:nth-child(5) { transition-delay: 0.33s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: 0.40s; }
+    .stagger.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-/* number blocks */
-.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);padding:0 var(--pad)}
-.num{padding:clamp(1rem,2.5vw,2rem);min-height:clamp(220px,34vw,420px);display:flex;flex-direction:column;justify-content:space-between}
-.num b{font-size:clamp(3rem,9vw,8rem);line-height:.85;font-weight:800;letter-spacing:-.05em;font-stretch:80%}
-.num span{font-weight:600;max-width:14ch}
-.c-g{background:var(--g);color:var(--w)}.c-o{background:var(--o);color:var(--k)}
-.c-y{background:var(--y)}.c-s{background:var(--s)}.c-k{background:var(--k);color:var(--w)}
+    /* Soft glow */
+    .glow-line {
+      background: linear-gradient(90deg, transparent, rgba(201,184,150,0.35), transparent);
+      height: 1px;
+    }
 
-/* closing */
-.end{margin:clamp(3rem,8vw,6rem) var(--pad) var(--gap);background:var(--o);padding:clamp(1.2rem,4vw,3.5rem);display:grid;grid-template-columns:1.4fr 1fr;gap:var(--gap);align-items:end}
-.end h2{font-size:clamp(2.2rem,7vw,6rem);line-height:.9;font-weight:800;font-stretch:80%;letter-spacing:-.04em;text-transform:uppercase}
-.end a.btn{justify-self:start;background:var(--k);color:var(--w);padding:1rem 1.6rem;font-weight:700;transition:background .2s,color .2s}
-.end a.btn:hover{background:var(--w);color:var(--k)}
-.end p{max-width:30ch;font-weight:500;margin-bottom:1.2rem}
+    .card {
+      background: linear-gradient(160deg, rgba(15,28,23,0.9), rgba(10,20,16,0.95));
+      border: 1px solid rgba(26,46,38,0.8);
+      backdrop-filter: blur(12px);
+    }
 
-footer{padding:clamp(2rem,5vw,4rem) var(--pad) 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid #eee;margin-top:clamp(2rem,5vw,4rem)}
-footer h4{font-weight:700;margin-bottom:.4rem}
-footer h4::after{content:"+";color:var(--o);margin-left:.2em}
-footer p,footer a{color:#555;display:block}
-footer a:hover{color:var(--o)}
-.top{grid-column:1/-1;text-align:right;font-weight:600}
+    .card:hover {
+      border-color: rgba(201,184,150,0.25);
+    }
 
-/* scroll reveal (tiny, no library) */
-.tile,.num{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
-.in{opacity:1!important;transform:none!important}
+    /* Number style */
+    .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
 
-/* responsive */
-@media (max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .hero .words{min-height:62svh}
-  .hero .art{min-height:260px;aspect-ratio:1/1}
-  .s4,.s6,.s8{grid-column:span 6}
-  .s12 .img{aspect-ratio:16/9}
-  .nums{grid-template-columns:repeat(2,1fr)}
-  .end{grid-template-columns:1fr}
-  footer{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:560px){
-  .bar nav a:nth-child(n+4){display:none}
-  .s4,.s6,.s8,.s12{grid-column:span 12}
-  .s8 .img,.s12 .img{aspect-ratio:4/3}
-  .hd{flex-direction:column;gap:.3rem}
-}
-@media (prefers-reduced-motion:reduce){
-  *{transition:none!important}.tile,.num{opacity:1;transform:none}
-}
-</style>
+    /* Soft radial background */
+    .bg-radial {
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(45,90,69,0.18), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(26,60,46,0.12), transparent 50%),
+        #0a1410;
+    }
+
+    /* Table */
+    .proposal-table th {
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      color: #a8b5ad;
+    }
+    .proposal-table td {
+      border-top: 1px solid rgba(26,46,38,0.7);
+    }
+
+    /* Loading screen */
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: #0a1410;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease, visibility 0.8s;
+    }
+    #loader.done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .loader-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.12em;
+      color: #c9b896;
+      opacity: 0;
+      animation: fadeInOut 1.8s ease forwards;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(8px); }
+      30% { opacity: 1; transform: translateY(0); }
+      70% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-6px); }
+    }
+
+    /* Progress bar under nav */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #c9b896, #8a9e8f);
+      z-index: 60;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* Subtle selection */
+    ::selection {
+      background: rgba(201,184,150,0.25);
+      color: #f5f0e6;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-radial antialiased">
 
-<div class="bar">
-  <b>Philip Oladele</b>
-  <nav>
-    <a href="#plan">The plan</a><a href="#track">Tracking</a><a href="#cost">Cost</a><a href="#days">30 days</a><a href="#hello">Say yes</a>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-text">NO ONE COMES TO WORK TO FAIL</div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="progress-bar" id="progress"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-atrios-border/60 bg-[#0a1410]/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="font-serif text-xl tracking-wide text-atrios-cream">Philip Oladele</div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-atrios-muted">
+        <a href="#opportunity" class="hover:text-atrios-cream transition">Opportunity</a>
+        <a href="#approach" class="hover:text-atrios-cream transition">Approach</a>
+        <a href="#budget" class="hover:text-atrios-cream transition">Investment</a>
+        <a href="#partnership" class="hover:text-atrios-cream transition">Partnership</a>
+      </div>
+      <a href="https://philipoladele.com" target="_blank" class="text-sm text-atrios-accent hover:text-atrios-cream transition">
+        philipoladele.com
+      </a>
+    </div>
   </nav>
-</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="words">
-    <h1>No one comes to work to <i>fail.</i></h1>
-    <p>Ryan, here's how I'd get your book to people who haven't heard of you yet.</p>
-  </div>
-  <div class="art">
-    <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <rect width="600" height="600" fill="#f2c94c"/>
-      <circle cx="470" cy="130" r="90" fill="#ff5a1f"/>
-      <g transform="translate(150 120)">
-        <rect x="0" y="0" width="300" height="400" fill="#0b3b2a"/>
-        <rect x="0" y="0" width="28" height="400" fill="#06241a"/>
-        <rect x="60" y="60" width="190" height="14" fill="#fff"/>
-        <rect x="60" y="92" width="150" height="14" fill="#fff"/>
-        <rect x="60" y="124" width="170" height="14" fill="#fff"/>
-        <rect x="60" y="156" width="90" height="14" fill="#ff5a1f"/>
-        <rect x="60" y="330" width="120" height="10" fill="#f2c94c"/>
-      </g>
-      <rect x="120" y="540" width="360" height="12" fill="#111"/>
-    </svg>
-  </div>
-</section>
-
-<!-- WHAT WE DO -->
-<div class="hd" id="plan"><h2>Four things I'd start with</h2><span>Phase one</span></div>
-<section class="grid">
-
-  <a class="tile s8" href="#plan">
-    <div class="img">
-      <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="800" height="500" fill="#f2c94c"/>
-        <rect x="90" y="90" width="620" height="80" rx="40" fill="#fff"/>
-        <circle cx="140" cy="130" r="14" fill="none" stroke="#111" stroke-width="5"/>
-        <path d="M151 141l14 14" stroke="#111" stroke-width="5" stroke-linecap="round"/>
-        <text x="190" y="140" font-family="Archivo,sans-serif" font-size="30" font-weight="600" fill="#111">how to be a good first-time manager</text>
-        <rect x="90" y="215" width="620" height="90" fill="#0b3b2a"/>
-        <rect x="112" y="232" width="40" height="56" fill="#ff5a1f"/>
-        <rect x="175" y="238" width="300" height="14" fill="#fff"/>
-        <rect x="175" y="266" width="220" height="10" fill="#9fc3b2"/>
-        <rect x="90" y="325" width="620" height="60" fill="#fff" opacity=".55"/>
-        <rect x="90" y="405" width="620" height="60" fill="#fff" opacity=".3"/>
-      </svg>
+  <!-- Hero -->
+  <header class="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-20 text-center relative">
+    <div class="reveal max-w-4xl mx-auto">
+      <p class="text-atrios-accent text-sm tracking-[0.25em] uppercase mb-8 font-medium">Book Sales & Audience Growth Proposal</p>
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-atrios-cream mb-8">
+        No One Comes<br>to Work to Fail
+      </h1>
+      <p class="text-atrios-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+        A practical system to take Ryan’s book beyond his existing network — with clear tracking, measured outreach, and compensation tied to real results.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+        <div class="px-5 py-2.5 rounded-full border border-atrios-border text-atrios-muted">
+          Prepared for <span class="text-atrios-cream">Ryan</span>
+        </div>
+        <div class="px-5 py-2.5 rounded-full border border-atrios-border text-atrios-muted">
+          By <span class="text-atrios-cream">Philip Oladele</span>
+        </div>
+      </div>
     </div>
-    <h3>Easy to find</h3><p>So the book shows up when someone searches for it.</p>
-  </a>
 
-  <a class="tile s4" href="#plan">
-    <div class="img">
-      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="600" height="450" fill="#0b3b2a"/>
-        <g stroke="#2f7a5a" stroke-width="2">
-          <line x1="300" y1="225" x2="300" y2="55"/><line x1="300" y1="225" x2="420" y2="85"/>
-          <line x1="300" y1="225" x2="490" y2="190"/><line x1="300" y1="225" x2="470" y2="320"/>
-          <line x1="300" y1="225" x2="380" y2="395"/><line x1="300" y1="225" x2="220" y2="395"/>
-          <line x1="300" y1="225" x2="130" y2="320"/><line x1="300" y1="225" x2="110" y2="190"/>
-          <line x1="300" y1="225" x2="180" y2="85"/><line x1="300" y1="225" x2="300" y2="395"/>
-        </g>
-        <rect x="262" y="183" width="76" height="84" fill="#ff5a1f"/>
-        <g fill="#0b3b2a" stroke="#f2c94c" stroke-width="4">
-          <circle cx="300" cy="55" r="22"/><circle cx="420" cy="85" r="22" fill="#f2c94c"/>
-          <circle cx="490" cy="190" r="22"/><circle cx="470" cy="320" r="22"/>
-          <circle cx="380" cy="395" r="22" fill="#f2c94c"/><circle cx="220" cy="395" r="22"/>
-          <circle cx="130" cy="320" r="22"/><circle cx="110" cy="190" r="22" fill="#f2c94c"/>
-          <circle cx="180" cy="85" r="22"/><circle cx="300" cy="395" r="22" opacity="0"/>
-        </g>
-      </svg>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-atrios-muted text-xs tracking-widest uppercase animate-pulse">
+      Scroll to explore
     </div>
-    <h3>Ten new voices</h3><p>Reviewers and creators who talk to your readers.</p>
-  </a>
+  </header>
 
-  <a class="tile s4" href="#plan">
-    <div class="img">
-      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="600" height="450" fill="#ff5a1f"/>
-        <g transform="rotate(-9 300 225)"><rect x="130" y="90" width="240" height="260" fill="#f2c94c"/></g>
-        <g transform="rotate(6 300 225)"><rect x="190" y="70" width="240" height="260" fill="#0b3b2a"/>
-          <text x="215" y="190" font-family="Archivo,sans-serif" font-weight="800" font-size="110" fill="#fff">“</text>
-          <rect x="215" y="215" width="150" height="12" fill="#fff"/><rect x="215" y="240" width="110" height="12" fill="#fff"/></g>
-        <text x="60" y="410" font-family="Archivo,sans-serif" font-weight="800" font-size="40" fill="#111">5 frameworks · 15 chapters</text>
-      </svg>
+  <!-- Opportunity -->
+  <section id="opportunity" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal mb-16">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">01 — The Opportunity</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight mb-8">
+          You already proved people will buy the book.
+        </h2>
+        <div class="space-y-6 text-atrios-muted text-lg leading-relaxed">
+          <p>
+            What stood out was not just that you want to sell more copies of <em class="text-atrios-cream not-italic">No One Comes to Work to Fail</em>. It was that you understand the economics of the book.
+          </p>
+          <p>
+            You know what you earn from each sale. You have an existing audience across Facebook and LinkedIn. You have already sold approximately <strong class="text-atrios-cream font-medium">212 copies</strong> in your first three and a half weeks — largely through your own network, without a serious promotional campaign behind the book.
+          </p>
+          <p>
+            That gives us a useful starting point. The next question is whether we can reach people outside that network who have the same need for what the book teaches.
+          </p>
+        </div>
+      </div>
+
+      <!-- Key stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal stagger">
+        <div class="card rounded-2xl p-6 text-center">
+          <div class="num text-3xl md:text-4xl text-atrios-cream mb-1">212</div>
+          <div class="text-xs text-atrios-muted tracking-wide">Copies sold<br>in 3.5 weeks</div>
+        </div>
+        <div class="card rounded-2xl p-6 text-center">
+          <div class="num text-3xl md:text-4xl text-atrios-cream mb-1">$7.50</div>
+          <div class="text-xs text-atrios-muted tracking-wide">Author earnings<br>per copy</div>
+        </div>
+        <div class="card rounded-2xl p-6 text-center">
+          <div class="num text-3xl md:text-4xl text-atrios-cream mb-1">5K</div>
+          <div class="text-xs text-atrios-muted tracking-wide">Facebook<br>followers</div>
+        </div>
+        <div class="card rounded-2xl p-6 text-center">
+          <div class="num text-3xl md:text-4xl text-atrios-cream mb-1">3K</div>
+          <div class="text-xs text-atrios-muted tracking-wide">LinkedIn<br>connections</div>
+        </div>
+      </div>
     </div>
-    <h3>Things worth sharing</h3><p>Lessons from the book, made to stop a scroll.</p>
-  </a>
+  </section>
 
-  <a class="tile s4" href="#plan">
-    <div class="img">
-      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="600" height="450" fill="#111"/>
-        <rect x="70" y="70" width="460" height="259" fill="#0b3b2a"/>
-        <circle cx="300" cy="200" r="52" fill="#ff5a1f"/>
-        <path d="M285 172l50 28-50 28z" fill="#fff"/>
-        <rect x="70" y="360" width="460" height="8" fill="#333"/>
-        <rect x="70" y="360" width="170" height="8" fill="#f2c94c"/>
-        <circle cx="240" cy="364" r="10" fill="#f2c94c"/>
-      </svg>
+  <div class="glow-line max-w-3xl mx-auto"></div>
+
+  <!-- Audience -->
+  <section class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-16 text-center">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">02 — Who the book is for</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight">
+          Four clear paths to readers
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 reveal stagger">
+        <div class="card rounded-2xl p-8">
+          <div class="text-atrios-accent text-sm tracking-widest uppercase mb-3">01</div>
+          <h3 class="font-serif text-2xl text-atrios-cream mb-3">Individual Readers</h3>
+          <p class="text-atrios-muted leading-relaxed">
+            New managers, supervisors, team leaders and department heads who would rather learn from a practical framework than figure everything out the hard way.
+          </p>
+        </div>
+        <div class="card rounded-2xl p-8">
+          <div class="text-atrios-accent text-sm tracking-widest uppercase mb-3">02</div>
+          <h3 class="font-serif text-2xl text-atrios-cream mb-3">Book Influencers</h3>
+          <p class="text-atrios-muted leading-relaxed">
+            Creators on Instagram, Facebook and LinkedIn who regularly feature leadership, management, personal development and workplace culture books.
+          </p>
+        </div>
+        <div class="card rounded-2xl p-8">
+          <div class="text-atrios-accent text-sm tracking-widest uppercase mb-3">03</div>
+          <h3 class="font-serif text-2xl text-atrios-cream mb-3">Organizations</h3>
+          <p class="text-atrios-muted leading-relaxed">
+            Chambers of commerce, municipalities, corporate learning teams and leadership programmes. One bulk order of 50–100 copies can outperform dozens of individual sales.
+          </p>
+        </div>
+        <div class="card rounded-2xl p-8">
+          <div class="text-atrios-accent text-sm tracking-widest uppercase mb-3">04</div>
+          <h3 class="font-serif text-2xl text-atrios-cream mb-3">Speaking Opportunities</h3>
+          <p class="text-atrios-muted leading-relaxed">
+            The book positions you for speaking engagements about management, leadership and workplace performance — without promising invitations.
+          </p>
+        </div>
+      </div>
     </div>
-    <h3>A short trailer</h3><p>Serious in tone, so it doesn't look machine-made. $50.</p>
-  </a>
+  </section>
 
-  <a class="tile s4" href="#plan">
-    <div class="img">
-      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="600" height="450" fill="#e9e4d9"/>
-        <rect x="90" y="50" width="420" height="350" fill="#fff" stroke="#111" stroke-width="4"/>
-        <rect x="90" y="50" width="420" height="36" fill="#111"/>
-        <circle cx="112" cy="68" r="6" fill="#ff5a1f"/><circle cx="132" cy="68" r="6" fill="#f2c94c"/><circle cx="152" cy="68" r="6" fill="#9fc3b2"/>
-        <rect x="120" y="120" width="110" height="150" fill="#0b3b2a"/>
-        <rect x="255" y="124" width="200" height="16" fill="#111"/><rect x="255" y="152" width="160" height="12" fill="#bbb"/>
-        <rect x="255" y="176" width="180" height="12" fill="#bbb"/>
-        <rect x="255" y="226" width="130" height="44" fill="#ff5a1f"/>
-        <rect x="120" y="300" width="340" height="12" fill="#ddd"/><rect x="120" y="326" width="260" height="12" fill="#ddd"/>
-      </svg>
+  <div class="glow-line max-w-3xl mx-auto"></div>
+
+  <!-- Approach -->
+  <section id="approach" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal mb-16">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">03 — The First Phase</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight mb-6">
+          Visibility beyond your own network
+        </h2>
+        <p class="text-atrios-muted text-lg leading-relaxed max-w-2xl">
+          Four focused workstreams designed to open new channels while we measure what actually produces sales.
+        </p>
+      </div>
+
+      <div class="space-y-8 reveal stagger">
+        <!-- A -->
+        <div class="card rounded-2xl p-8 md:p-10">
+          <div class="flex items-start gap-5">
+            <div class="num text-4xl text-atrios-accent/80 shrink-0">A</div>
+            <div>
+              <h3 class="font-serif text-2xl text-atrios-cream mb-3">Book SEO & Discoverability</h3>
+              <p class="text-atrios-muted leading-relaxed mb-4">
+                Make the book easier to find when someone searches for practical management guidance or your name.
+              </p>
+              <ul class="space-y-2 text-sm text-atrios-muted">
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Research high-intent terms around first-time managers and leadership development</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Improve titles, descriptions and structure on existing pages</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Identify relevant articles, interviews and link opportunities</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Ensure every asset points to the correct purchase path</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- B -->
+        <div class="card rounded-2xl p-8 md:p-10">
+          <div class="flex items-start gap-5">
+            <div class="num text-4xl text-atrios-accent/80 shrink-0">B</div>
+            <div>
+              <h3 class="font-serif text-2xl text-atrios-cream mb-3">Book Influencers & Reviewers</h3>
+              <p class="text-atrios-muted leading-relaxed mb-4">
+                Introduce the book to audiences you have not already built. Minimum 10 relevant creators in the first phase.
+              </p>
+              <ul class="space-y-2 text-sm text-atrios-muted">
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Leadership, management, business, personal development, workplace culture</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Personalised outreach only — no generic blasts</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Track responses, features and actual sales impact</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Any paid placement requires your explicit approval</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- C -->
+        <div class="card rounded-2xl p-8 md:p-10">
+          <div class="flex items-start gap-5">
+            <div class="num text-4xl text-atrios-accent/80 shrink-0">C</div>
+            <div>
+              <h3 class="font-serif text-2xl text-atrios-cream mb-3">Creative Content People Can Share</h3>
+              <p class="text-atrios-muted leading-relaxed mb-4">
+                More than a cover image and an Amazon link. Assets built around the ideas in the book.
+              </p>
+              <ul class="space-y-2 text-sm text-atrios-muted">
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Short lessons from the five frameworks</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Quotes and insights from the 15 chapters</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Questions new managers actually face</li>
+                <li class="flex gap-3"><span class="text-atrios-accent">→</span> Platform-native versions, not one-size-fits-all</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- D -->
+        <div class="card rounded-2xl p-8 md:p-10">
+          <div class="flex items-start gap-5">
+            <div class="num text-4xl text-atrios-accent/80 shrink-0">D</div>
+            <div>
+              <h3 class="font-serif text-2xl text-atrios-cream mb-3">Book Trailer — $50</h3>
+              <p class="text-atrios-muted leading-relaxed">
+                A short, professional promotional video that introduces the book and directs viewers to purchase. Prepared for Facebook, Instagram, LinkedIn and YouTube. Direction approved by you before final render. Built to feel appropriate for a serious management book — not generic AI visuals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h3>One home for every link</h3><p>A simple page that sends people to buy. $150.</p>
-  </a>
+  </section>
 
-</section>
+  <div class="glow-line max-w-3xl mx-auto"></div>
 
-<!-- TRACKING -->
-<div class="hd" id="track"><h2>Knowing what actually sold</h2><span>Real purchases, not likes</span></div>
-<section class="grid">
-  <a class="tile s12" href="#track">
-    <div class="img">
-      <svg viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="1200" height="450" fill="#0b3b2a"/>
-        <polygon points="80,60 1120,60 960,150 240,150" fill="#2f7a5a"/>
-        <polygon points="240,165 960,165 840,255 360,255" fill="#4f9374"/>
-        <polygon points="360,270 840,270 740,350 460,350" fill="#f2c94c"/>
-        <polygon points="460,365 740,365 690,425 510,425" fill="#ff5a1f"/>
-        <g font-family="Archivo,sans-serif" font-weight="800" font-size="34" fill="#fff" text-anchor="middle">
-          <text x="600" y="115">Saw it</text><text x="600" y="220">Clicked</text>
-          <text x="600" y="320" fill="#111">Came back</text><text x="600" y="406" fill="#111" font-size="28">Bought</text>
-        </g>
-      </svg>
+  <!-- Sales System -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">04 — The Sales System</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight">
+          Know what happens after someone sees the book
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 reveal stagger">
+        <div class="card rounded-2xl p-7">
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Dedicated Landing Page</h3>
+          <p class="text-atrios-muted text-sm leading-relaxed">Clean, mobile-first page that introduces the book, explains who it is for, and directs visitors to purchase options. The central destination for all traffic.</p>
+        </div>
+        <div class="card rounded-2xl p-7">
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Trackable Links</h3>
+          <p class="text-atrios-muted text-sm leading-relaxed">Amazon Attribution and tagged links where supported. Compare channels instead of relying only on impressions and likes.</p>
+        </div>
+        <div class="card rounded-2xl p-7">
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Retargeting Test</h3>
+          <p class="text-atrios-muted text-sm leading-relaxed">Small Meta retargeting campaign once sufficient traffic exists. Kept separate so we can see cost and evidence clearly.</p>
+        </div>
+        <div class="card rounded-2xl p-7">
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Clear Reporting</h3>
+          <p class="text-atrios-muted text-sm leading-relaxed">Activity, placements and attributed sales are tracked separately. Ten outreach messages are activity. A verified purchase is a sale.</p>
+        </div>
+      </div>
     </div>
-    <h3>From “saw it” to “bought it”</h3><p>Ten messages sent is activity. One verified purchase is a sale.</p>
-  </a>
+  </section>
 
-  <a class="tile s6" href="#track">
-    <div class="img">
-      <svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="700" height="525" fill="#ff5a1f"/>
-        <g fill="#111">
-          <!-- 10 x 5 books -->
-        </g>
-        <g id="books"></g>
-        <text x="40" y="490" font-family="Archivo,sans-serif" font-weight="800" font-size="64" fill="#111" letter-spacing="-2">1 order = 50+ copies</text>
-      </svg>
+  <div class="glow-line max-w-3xl mx-auto"></div>
+
+  <!-- Budget -->
+  <section id="budget" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="reveal mb-12 text-center">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">05 — Investment</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight mb-4">
+          Keep the first commitment manageable
+        </h2>
+        <p class="text-atrios-muted">Establish the foundation, begin outreach, and gather evidence before deciding on a larger campaign.</p>
+      </div>
+
+      <div class="card rounded-2xl overflow-hidden reveal">
+        <table class="w-full proposal-table text-left">
+          <thead>
+            <tr class="bg-atrios-green/30">
+              <th class="px-6 py-4">Deliverable</th>
+              <th class="px-6 py-4 text-right">Cost</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr>
+              <td class="px-6 py-4 text-atrios-muted">Book SEO and discoverability work</td>
+              <td class="px-6 py-4 text-right text-atrios-cream">Included</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-atrios-muted">Research + outreach to ≥10 influencers</td>
+              <td class="px-6 py-4 text-right text-atrios-cream">Included</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-atrios-muted">Initial promotional graphics & artwork</td>
+              <td class="px-6 py-4 text-right text-atrios-cream">Included</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-atrios-muted">Campaign planning + tracking setup</td>
+              <td class="px-6 py-4 text-right text-atrios-cream">Included</td>
+            </tr>
+            <tr class="bg-atrios-green/20">
+              <td class="px-6 py-4 font-medium text-atrios-cream">Initial Campaign Fee</td>
+              <td class="px-6 py-4 text-right font-medium text-atrios-cream">$500</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-atrios-muted">Book trailer (one-time)</td>
+              <td class="px-6 py-4 text-right text-atrios-cream">$50</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-atrios-muted">Book landing page (one-time)</td>
+              <td class="px-6 py-4 text-right text-atrios-cream">$150</td>
+            </tr>
+            <tr class="bg-atrios-accent/10">
+              <td class="px-6 py-5 font-medium text-atrios-cream text-base">Total Initial Project Cost</td>
+              <td class="px-6 py-5 text-right font-medium text-atrios-cream text-base">$700</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-center text-sm text-atrios-muted mt-6 reveal">
+        Paid advertising spend and influencer fees remain under your control and require your approval.
+      </p>
     </div>
-    <h3>Whole teams, one order</h3><p>Companies and chambers who train new managers.</p>
-  </a>
+  </section>
 
-  <a class="tile s6" href="#track">
-    <div class="img">
-      <svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="700" height="525" fill="#f2c94c"/>
-        <circle cx="350" cy="250" r="170" fill="#111"/>
-        <path d="M350 250 L350 80 A170 170 0 0 1 497 335 Z" fill="#ff5a1f"/>
-        <text x="425" y="205" font-family="Archivo,sans-serif" font-weight="800" font-size="56" fill="#111" text-anchor="middle">30%</text>
-        <text x="270" y="300" font-family="Archivo,sans-serif" font-weight="800" font-size="56" fill="#fff" text-anchor="middle">70%</text>
-        <text x="350" y="485" font-family="Archivo,sans-serif" font-weight="600" font-size="26" fill="#111" text-anchor="middle">Philip · Ryan, on sales the campaign earns</text>
-      </svg>
+  <div class="glow-line max-w-3xl mx-auto"></div>
+
+  <!-- Compensation -->
+  <section id="partnership" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">06 — Partnership Model</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight mb-6">
+          Compensation tied to results
+        </h2>
+        <p class="text-atrios-muted text-lg leading-relaxed max-w-2xl">
+          You mentioned that if the book sells 1,000 copies in a month, you would be comfortable paying someone $2,500. That is a sensible starting point because it ties compensation to commercial value.
+        </p>
+      </div>
+
+      <div class="card rounded-2xl p-8 md:p-10 mb-8 reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-2 h-2 rounded-full bg-atrios-accent"></div>
+          <h3 class="font-serif text-2xl text-atrios-cream">Option A — Performance Partnership (Recommended)</h3>
+        </div>
+        <p class="text-atrios-muted mb-8 leading-relaxed">
+          You pay the initial $500 (+ optional trailer and landing page). After setup, my performance compensation is <strong class="text-atrios-cream font-medium">30% of the agreed net author earnings from incremental sales</strong> that can reasonably be attributed to the campaign.
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full proposal-table text-sm">
+            <thead>
+              <tr>
+                <th class="px-4 py-3 text-left">Incremental Copies</th>
+                <th class="px-4 py-3 text-right">Your Earnings</th>
+                <th class="px-4 py-3 text-right">My 30% Share</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-3 text-atrios-cream">100</td>
+                <td class="px-4 py-3 text-right text-atrios-muted">$750</td>
+                <td class="px-4 py-3 text-right text-atrios-cream">$225</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-atrios-cream">250</td>
+                <td class="px-4 py-3 text-right text-atrios-muted">$1,875</td>
+                <td class="px-4 py-3 text-right text-atrios-cream">$562.50</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-atrios-cream">500</td>
+                <td class="px-4 py-3 text-right text-atrios-muted">$3,750</td>
+                <td class="px-4 py-3 text-right text-atrios-cream">$1,125</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 text-atrios-cream font-medium">1,000</td>
+                <td class="px-4 py-3 text-right text-atrios-muted">$7,500</td>
+                <td class="px-4 py-3 text-right text-atrios-cream font-medium">$2,250</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-atrios-muted mt-5">
+          These are illustrations, not forecasts. Actual earnings per copy may vary by format, retailer or bulk terms. We agree the definition of “incremental” before work begins.
+        </p>
+      </div>
+
+      <div class="card rounded-2xl p-8 md:p-10 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-2 h-2 rounded-full bg-atrios-muted"></div>
+          <h3 class="font-serif text-2xl text-atrios-cream">Option B — Flat Fee</h3>
+        </div>
+        <p class="text-atrios-muted leading-relaxed">
+          Available if you prefer predictable monthly costs. Scope and fee defined separately from the initial setup. The fee is payable regardless of sales results.
+        </p>
+      </div>
     </div>
-    <h3>I only win when you do</h3><p>After setup, my share is 30% of the extra earnings I can show.</p>
-  </a>
-</section>
+  </section>
 
-<!-- COST -->
-<div class="hd" id="cost"><h2>What it costs to start</h2><span>Ads and paid features are extra, and only with your OK</span></div>
-<section class="nums">
-  <div class="num c-g"><b>$500</b><span>Campaign setup and outreach</span></div>
-  <div class="num c-s"><b>$50</b><span>Book trailer</span></div>
-  <div class="num c-y"><b>$150</b><span>Landing page</span></div>
-  <div class="num c-k"><b>$700</b><span>All in, once</span></div>
-</section>
+  <div class="glow-line max-w-3xl mx-auto"></div>
 
-<!-- 30 DAYS -->
-<div class="hd" id="days"><h2>The first 30 days</h2><span>Build, try, decide</span></div>
-<section class="nums">
-  <div class="num c-y"><b>1</b><span>Get the book ready</span></div>
-  <div class="num c-o"><b>2</b><span>Start reaching out</span></div>
-  <div class="num c-s"><b>3</b><span>See who answers</span></div>
-  <div class="num c-g"><b>4</b><span>Keep what works</span></div>
-</section>
+  <!-- 30 Days -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal mb-14 text-center">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">07 — First 30 Days</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight">
+          Build the foundation. Test the channels.
+        </h2>
+      </div>
 
-<!-- CLOSE -->
-<section class="end" id="hello">
-  <h2>Let's find your next readers.</h2>
-  <div>
-    <p>We agree how we'll measure sales before anything starts.</p>
-    <a class="btn" href="mailto:hello@philipoladele.com?subject=Book%20campaign">Reply to Philip</a>
-  </div>
-</section>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal stagger">
+        <div class="card rounded-2xl p-6">
+          <div class="text-atrios-accent text-xs tracking-widest uppercase mb-3">Week 1</div>
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Prepare</h3>
+          <p class="text-sm text-atrios-muted leading-relaxed">Review pages, establish baseline, build landing page, create first assets.</p>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <div class="text-atrios-accent text-xs tracking-widest uppercase mb-3">Week 2</div>
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Reach</h3>
+          <p class="text-sm text-atrios-muted leading-relaxed">Begin influencer outreach. Launch initial content. Confirm tracking is live.</p>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <div class="text-atrios-accent text-xs tracking-widest uppercase mb-3">Week 3</div>
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Signal</h3>
+          <p class="text-sm text-atrios-muted leading-relaxed">Review responses and early data. Follow up. Start institutional prospecting.</p>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <div class="text-atrios-accent text-xs tracking-widest uppercase mb-3">Week 4</div>
+          <h3 class="font-serif text-xl text-atrios-cream mb-2">Decide</h3>
+          <p class="text-sm text-atrios-muted leading-relaxed">Full review. Identify what worked. Decide next investment — or stop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <div><h4>Email</h4><a href="mailto:philip.oladele@philipoladele.com">hello@philipoladele.com</a></div>
-  <div><h4>Site</h4><a href="https://philipoladele.com/">philipoladele.com</a></div>
-  <div><h4>Work</h4><p>Social media strategy, book promotion, digital marketing</p></div>
-  <div><h4>For</h4><p>Ryan · No One Comes to Work to Fail</p></div>
-  <a class="top" href="#top" onclick="window.scrollTo({top:0});return false">Back to top</a>
-</footer>
+  <div class="glow-line max-w-3xl mx-auto"></div>
 
-<script>
-// draw the 10 x 5 book grid
-(function(){
-  var g=document.getElementById('books'),ns='http://www.w3.org/2000/svg',h='';
-  for(var r=0;r<5;r++)for(var c=0;c<10;c++){
-    var hot=(r===0&&c<3)||(r===2&&c>5&&c<9);
-    h+='<rect x="'+(40+c*62)+'" y="'+(50+r*76)+'" width="46" height="62" fill="'+(hot?'#f2c94c':'#0b3b2a')+'"/>';
-  }
-  g.innerHTML=h;
-  // gentle reveal
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('.tile,.num').forEach(function(el,i){
-    el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
-})();
-</script>
+  <!-- Success -->
+  <section class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="reveal">
+        <p class="text-atrios-accent text-sm tracking-[0.2em] uppercase mb-4">08 — What Success Looks Like</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-atrios-cream leading-tight mb-10">
+          We measure what matters
+        </h2>
+        <div class="space-y-4 text-left max-w-xl mx-auto">
+          <div class="flex gap-4 items-start">
+            <span class="text-atrios-accent mt-1">01</span>
+            <p class="text-atrios-muted">Additional book sales and attributable author earnings</p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-atrios-accent mt-1">02</span>
+            <p class="text-atrios-muted">Relevant influencer features and genuine reader engagement</p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-atrios-accent mt-1">03</span>
+            <p class="text-atrios-muted">Traffic reaching the book’s purchase pages</p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-atrios-accent mt-1">04</span>
+            <p class="text-atrios-muted">Cost of generating attributable sales through paid promotion</p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-atrios-accent mt-1">05</span>
+            <p class="text-atrios-muted">Qualified conversations with institutional buyers</p>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-atrios-accent mt-1">06</span>
+            <p class="text-atrios-muted">Bulk purchase opportunities and speaking enquiries</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="py-28 px-6 border-t border-atrios-border/50">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <p class="font-serif text-3xl md:text-4xl text-atrios-cream leading-snug mb-10">
+        You already did the hard part.<br>
+        You wrote the book and proved people will buy it.
+      </p>
+      <p class="text-atrios-muted text-lg leading-relaxed mb-12 max-w-2xl mx-auto">
+        My job is to help it reach readers who do not know you yet, give those readers a reason to take an interest, and build a measurable path from discovery to purchase.
+      </p>
+      <p class="text-atrios-muted mb-16 max-w-xl mx-auto">
+        I would rather start with a clear plan, do the work properly, and let the evidence guide our next decision than ask you to make a large commitment based on promises.
+      </p>
+
+      <div class="inline-flex flex-col items-center gap-2">
+        <div class="font-serif text-2xl text-atrios-cream">Philip Oladele</div>
+        <div class="text-sm text-atrios-muted tracking-wide">Social Media Strategy · Book Promotion · Digital Marketing</div>
+        <a href="https://philipoladele.com" target="_blank" class="mt-4 text-atrios-accent hover:text-atrios-cream transition text-sm">
+          philipoladele.com →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 border-t border-atrios-border/40 text-center text-xs text-atrios-muted">
+    <p>Prepared for Ryan · No One Comes to Work to Fail · © 2026 Philip Oladele</p>
+  </footer>
+
+  <script>
+    // Loader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('done');
+      }, 1900);
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+
+    // Progress bar
+    const progress = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progress.style.width = pct + '%';
+    });
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
