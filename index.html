@@ -2,280 +2,333 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>No One Comes to Work to Fail: a proposal for Ryan</title>
-<meta name="description" content="A book sales and audience growth proposal for Ryan, from Philip Oladele.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>No One Comes to Work to Fail — for Ryan, from Philip</title>
+<meta name="description" content="A plan to get No One Comes to Work to Fail in front of readers who don't know Ryan yet.">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f4f0e8; --ink:#1a1814; --muted:#6b655a; --rule:#cfc8b8;
-  --accent:#c2410c; --wash:#ebe5d7;
-  --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace;
-  --gutter:clamp(1.1rem,4vw,3rem);
+  --g:#0b3b2a; --o:#ff5a1f; --y:#f2c94c; --s:#e9e4d9; --k:#111; --w:#fff;
+  --gap:clamp(.75rem,1.8vw,1.5rem); --pad:clamp(1rem,3vw,2.5rem);
+  --f:'Archivo',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:clamp(1.02rem,.96rem + .3vw,1.2rem);line-height:1.65;overflow-x:hidden}
-a{color:inherit}
-::selection{background:var(--accent);color:#fff}
+body{font-family:var(--f);background:var(--w);color:var(--k);font-size:clamp(.95rem,.9rem + .25vw,1.1rem);line-height:1.35;padding-bottom:env(safe-area-inset-bottom)}
+a{color:inherit;text-decoration:none}
+svg{display:block;width:100%;height:100%}
 
-/* masthead */
-.mast{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem var(--gutter);border-bottom:1px solid var(--ink);font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
-.mast nav{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:flex-end}
-.mast a{text-decoration:none;color:var(--muted)}
-.mast a:hover{color:var(--accent)}
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem var(--pad);border-bottom:1px solid #eee}
+.bar b{font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+.bar nav{display:flex;gap:clamp(.8rem,2vw,1.6rem);font-weight:500;flex-wrap:wrap;justify-content:flex-end}
+.bar nav a::before{content:"+";margin-right:.2em;color:var(--o)}
+.bar nav a:hover{color:var(--o)}
 
-.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:var(--gap);padding:var(--gap) var(--pad) 0}
+.hero .words{background:var(--g);color:var(--w);padding:clamp(1.2rem,3.5vw,3rem);display:flex;flex-direction:column;justify-content:space-between;min-height:min(78svh,720px)}
+.hero h1{font-size:clamp(2.6rem,9vw,8rem);line-height:.88;font-weight:800;font-stretch:80%;letter-spacing:-.035em;text-transform:uppercase}
+.hero h1 i{font-style:normal;color:var(--o)}
+.hero p{max-width:26ch;font-size:clamp(1.05rem,2vw,1.5rem);font-weight:500}
+.hero .art{background:var(--y);min-height:320px}
 
-/* title block */
-.title{padding:clamp(3rem,9vw,7rem) 0 clamp(2.5rem,6vw,4.5rem);border-bottom:1px solid var(--rule)}
-.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1.4rem}
-h1{font-weight:700;font-size:clamp(2.5rem,8.4vw,6.2rem);line-height:.98;letter-spacing:-.025em;max-width:13ch}
-h1 span{font-style:italic;font-weight:400}
-.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem 2rem;margin-top:clamp(2rem,5vw,3.5rem);font-size:.95rem}
-.meta dt{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+/* sections */
+.hd{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:clamp(2.5rem,7vw,5rem) var(--pad) var(--gap)}
+.hd h2{font-size:clamp(1.6rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.025em;line-height:1;font-stretch:85%}
+.hd span{font-weight:500;color:#777}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);padding:0 var(--pad)}
+.s4{grid-column:span 4}.s6{grid-column:span 6}.s8{grid-column:span 8}.s12{grid-column:span 12}
 
-/* sections: label column + body */
-.sec{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:1rem clamp(1.5rem,5vw,4rem);padding:clamp(2.5rem,6vw,4.5rem) 0;border-bottom:1px solid var(--rule)}
-.label{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.label b{display:block;font-size:2.4rem;font-weight:400;color:var(--accent);letter-spacing:0;line-height:1;margin-bottom:.4rem}
-.body>*+*{margin-top:1.15em}
-h2{font-size:clamp(1.7rem,4.2vw,2.7rem);line-height:1.12;letter-spacing:-.015em;font-weight:600;max-width:20ch}
-h3{font-size:1.2em;font-weight:600;line-height:1.3;margin-top:2em}
-.body p{max-width:62ch}
-.body em{font-style:italic}
-.pull{border-left:3px solid var(--accent);padding-left:1.1rem;font-size:1.18em;font-style:italic;max-width:46ch}
-.hl{background:linear-gradient(transparent 62%,rgba(194,65,12,.28) 62%)}
+/* tile = visual + caption (the big.dk pattern) */
+.tile{display:block}
+.tile .img{aspect-ratio:4/3;overflow:hidden;background:var(--s)}
+.s8 .img{aspect-ratio:16/10}
+.s12 .img{aspect-ratio:21/8}
+.tile .img svg{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.tile:hover .img svg{transform:scale(1.045)}
+.tile h3{margin-top:.7rem;font-size:1.05em;font-weight:700;display:flex;gap:.5rem;align-items:baseline}
+.tile h3::before{content:"";width:.7em;height:.7em;background:var(--o);flex:none;transform:translateY(.05em)}
+.tile p{color:#666;margin-top:.1rem;padding-left:1.2em}
 
-/* letter */
-.letter p:first-letter{font-size:3.6em;float:left;line-height:.85;padding:.08em .1em 0 0;font-weight:700;color:var(--accent)}
+/* number blocks */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);padding:0 var(--pad)}
+.num{padding:clamp(1rem,2.5vw,2rem);min-height:clamp(220px,34vw,420px);display:flex;flex-direction:column;justify-content:space-between}
+.num b{font-size:clamp(3rem,9vw,8rem);line-height:.85;font-weight:800;letter-spacing:-.05em;font-stretch:80%}
+.num span{font-weight:600;max-width:14ch}
+.c-g{background:var(--g);color:var(--w)}.c-o{background:var(--o);color:var(--k)}
+.c-y{background:var(--y)}.c-s{background:var(--s)}.c-k{background:var(--k);color:var(--w)}
 
-/* lists */
-.list{list-style:none;border-top:1px solid var(--ink)}
-.list li{display:grid;grid-template-columns:2.2rem 1fr;gap:.5rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
-.list li>i{font:normal 400 .8rem var(--mono);color:var(--accent);padding-top:.35rem}
-.list strong{display:block;font-weight:600}
-.list span{color:var(--muted);font-size:.95em}
+/* closing */
+.end{margin:clamp(3rem,8vw,6rem) var(--pad) var(--gap);background:var(--o);padding:clamp(1.2rem,4vw,3.5rem);display:grid;grid-template-columns:1.4fr 1fr;gap:var(--gap);align-items:end}
+.end h2{font-size:clamp(2.2rem,7vw,6rem);line-height:.9;font-weight:800;font-stretch:80%;letter-spacing:-.04em;text-transform:uppercase}
+.end a.btn{justify-self:start;background:var(--k);color:var(--w);padding:1rem 1.6rem;font-weight:700;transition:background .2s,color .2s}
+.end a.btn:hover{background:var(--w);color:var(--k)}
+.end p{max-width:30ch;font-weight:500;margin-bottom:1.2rem}
 
-/* tables */
-.tbl{width:100%;border-collapse:collapse;font-size:.98em;max-width:none}
-.tbl th{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:left;color:var(--muted);padding:.6rem 0;border-bottom:1px solid var(--ink)}
-.tbl td{padding:.85rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
-.tbl td:last-child,.tbl th:last-child{text-align:right;white-space:nowrap;padding-left:1rem;font-variant-numeric:tabular-nums}
-.tbl tr.sum td{border-bottom:0;border-top:2px solid var(--ink);font-weight:700;font-size:1.15em;padding-top:1rem}
-.tbl small{display:block;color:var(--muted);font-size:.86em}
+footer{padding:clamp(2rem,5vw,4rem) var(--pad) 2rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid #eee;margin-top:clamp(2rem,5vw,4rem)}
+footer h4{font-weight:700;margin-bottom:.4rem}
+footer h4::after{content:"+";color:var(--o);margin-left:.2em}
+footer p,footer a{color:#555;display:block}
+footer a:hover{color:var(--o)}
+.top{grid-column:1/-1;text-align:right;font-weight:600}
 
-/* aside note */
-.note{background:var(--wash);padding:1rem 1.2rem;font-size:.92em;max-width:62ch;border-left:3px solid var(--ink)}
-.note b{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:.3rem}
+/* scroll reveal (tiny, no library) */
+.tile,.num{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.in{opacity:1!important;transform:none!important}
 
-/* chain */
-.chain{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ink);margin-top:1.4rem}
-.chain div{padding:1rem;border-right:1px solid var(--ink)}
-.chain div:last-child{border:0;background:var(--ink);color:var(--paper)}
-.chain b{font:500 .68rem var(--mono);letter-spacing:.08em;text-transform:uppercase;display:block;opacity:.7;margin-bottom:.3rem}
-
-/* weeks */
-.weeks{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink)}
-.weeks div{padding:1.1rem 1.1rem 1.3rem 0;border-bottom:1px solid var(--rule)}
-.weeks div:nth-child(even){padding-left:1.1rem;border-left:1px solid var(--rule)}
-.weeks b{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block}
-.weeks h3{margin:.2rem 0 .3rem}
-.weeks p{font-size:.95em;color:var(--muted)}
-
-/* sign-off */
-.sign{padding:clamp(3rem,8vw,6rem) 0}
-.sign .big{font-size:clamp(1.8rem,5vw,3.4rem);line-height:1.1;font-weight:600;max-width:18ch;letter-spacing:-.02em}
-.btn{display:inline-block;margin-top:1.8rem;padding:.9rem 1.5rem;background:var(--ink);color:var(--paper);text-decoration:none;font:500 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;transition:background .2s}
-.btn:hover{background:var(--accent)}
-.sig{margin-top:2.5rem;font-style:italic}
-.sig b{font-style:normal;display:block;font-size:1.15em}
-footer{border-top:1px solid var(--ink);padding:1.2rem var(--gutter);font:400 .72rem var(--mono);letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-
-/* small screens */
-@media (max-width:760px){
-  .sec{grid-template-columns:1fr;padding:2.2rem 0}
-  .label{display:flex;align-items:baseline;gap:.7rem}
-  .label b{font-size:1.6rem;margin:0}
-  .mast nav a:not(:last-child){display:none}
-  .weeks{grid-template-columns:1fr}
-  .weeks div:nth-child(even){padding-left:0;border-left:0}
-  .chain{grid-template-columns:1fr}
-  .chain div{border-right:0;border-bottom:1px solid var(--ink)}
-  .chain div:last-child{border:0}
+/* responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero .words{min-height:62svh}
+  .hero .art{min-height:260px;aspect-ratio:1/1}
+  .s4,.s6,.s8{grid-column:span 6}
+  .s12 .img{aspect-ratio:16/9}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .end{grid-template-columns:1fr}
+  footer{grid-template-columns:repeat(2,1fr)}
 }
-@media print{
-  .mast nav,.btn{display:none}
-  body{background:#fff;font-size:11pt}
-  .sec{break-inside:avoid}
+@media (max-width:560px){
+  .bar nav a:nth-child(n+4){display:none}
+  .s4,.s6,.s8,.s12{grid-column:span 12}
+  .s8 .img,.s12 .img{aspect-ratio:4/3}
+  .hd{flex-direction:column;gap:.3rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}.tile,.num{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
 
-<header class="mast">
-  <span>Proposal · October 2026</span>
+<div class="bar">
+  <b>Philip Oladele</b>
   <nav>
-    <a href="#letter">Letter</a><a href="#plan">The plan</a><a href="#tracking">Tracking</a>
-    <a href="#budget">Budget</a><a href="#pay">Payment</a><a href="#start">Next step</a>
+    <a href="#plan">The plan</a><a href="#track">Tracking</a><a href="#cost">Cost</a><a href="#days">30 days</a><a href="#hello">Say yes</a>
   </nav>
-</header>
+</div>
 
-<main class="wrap">
+<!-- HERO -->
+<section class="hero">
+  <div class="words">
+    <h1>No one comes to work to <i>fail.</i></h1>
+    <p>Ryan, here's how I'd get your book to people who haven't heard of you yet.</p>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="600" height="600" fill="#f2c94c"/>
+      <circle cx="470" cy="130" r="90" fill="#ff5a1f"/>
+      <g transform="translate(150 120)">
+        <rect x="0" y="0" width="300" height="400" fill="#0b3b2a"/>
+        <rect x="0" y="0" width="28" height="400" fill="#06241a"/>
+        <rect x="60" y="60" width="190" height="14" fill="#fff"/>
+        <rect x="60" y="92" width="150" height="14" fill="#fff"/>
+        <rect x="60" y="124" width="170" height="14" fill="#fff"/>
+        <rect x="60" y="156" width="90" height="14" fill="#ff5a1f"/>
+        <rect x="60" y="330" width="120" height="10" fill="#f2c94c"/>
+      </g>
+      <rect x="120" y="540" width="360" height="12" fill="#111"/>
+    </svg>
+  </div>
+</section>
 
-  <section class="title">
-    <p class="kicker">A book sales and audience growth proposal</p>
-    <h1>No One Comes to Work <span>to Fail</span></h1>
-    <dl class="meta">
-      <div><dt>Prepared for</dt><dd>Ryan</dd></div>
-      <div><dt>Prepared by</dt><dd>Philip Oladele</dd></div>
-      <div><dt>First commitment</dt><dd>$700, one time</dd></div>
-      <div><dt>Ongoing pay</dt><dd>Tied to attributable sales</dd></div>
-    </dl>
-  </section>
+<!-- WHAT WE DO -->
+<div class="hd" id="plan"><h2>Four things I'd start with</h2><span>Phase one</span></div>
+<section class="grid">
 
-  <section class="sec" id="letter">
-    <div class="label"><b>01</b>The opportunity</div>
-    <div class="body letter">
-      <h2>You already know what a sale is worth.</h2>
-      <p>Ryan, what stood out in our conversation was not only that you want to sell more copies. It was that you understand the economics. You know what you earn on each sale, you have an audience on Facebook and LinkedIn, and you sold about <span class="hl">212 copies in three and a half weeks</span> largely through your own network, without a serious promotional push.</p>
-      <p>That tells us people who know you will buy. The open question is whether people who don't know you, but need what the book teaches, will too.</p>
-      <p>I don't think the answer is simply more Facebook ads. I would rather build several routes to readers, test which ones produce sales, and put more effort into the ones that prove themselves.</p>
-      <p class="pull">You are willing to reward results rather than pay someone indefinitely without knowing if their work sells books. I am comfortable building our arrangement on that.</p>
+  <a class="tile s8" href="#plan">
+    <div class="img">
+      <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="800" height="500" fill="#f2c94c"/>
+        <rect x="90" y="90" width="620" height="80" rx="40" fill="#fff"/>
+        <circle cx="140" cy="130" r="14" fill="none" stroke="#111" stroke-width="5"/>
+        <path d="M151 141l14 14" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+        <text x="190" y="140" font-family="Archivo,sans-serif" font-size="30" font-weight="600" fill="#111">how to be a good first-time manager</text>
+        <rect x="90" y="215" width="620" height="90" fill="#0b3b2a"/>
+        <rect x="112" y="232" width="40" height="56" fill="#ff5a1f"/>
+        <rect x="175" y="238" width="300" height="14" fill="#fff"/>
+        <rect x="175" y="266" width="220" height="10" fill="#9fc3b2"/>
+        <rect x="90" y="325" width="620" height="60" fill="#fff" opacity=".55"/>
+        <rect x="90" y="405" width="620" height="60" fill="#fff" opacity=".3"/>
+      </svg>
     </div>
-  </section>
+    <h3>Easy to find</h3><p>So the book shows up when someone searches for it.</p>
+  </a>
 
-  <section class="sec">
-    <div class="label"><b>02</b>Who buys it</div>
-    <div class="body">
-      <h2>Four kinds of buyer, four different approaches.</h2>
-      <ol class="list">
-        <li><i>i.</i><div><strong>Individual readers</strong><span>New managers, supervisors, team leaders and department heads learning on the job who would use a practical framework.</span></div></li>
-        <li><i>ii.</i><div><strong>People who influence what others read</strong><span>Book reviewers and creators on Instagram and Facebook who feature a book of the week or month, especially in leadership and workplace culture.</span></div></li>
-        <li><i>iii.</i><div><strong>Organisations</strong><span>Chambers of commerce, municipalities, business associations and training teams. One order of 50 or 100 copies can outweigh dozens of single sales, so it gets its own approach.</span></div></li>
-        <li><i>iv.</i><div><strong>Speaking audiences</strong><span>I won't promise the book will bring invitations. I will build the material so it supports them when they come.</span></div></li>
-      </ol>
+  <a class="tile s4" href="#plan">
+    <div class="img">
+      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="450" fill="#0b3b2a"/>
+        <g stroke="#2f7a5a" stroke-width="2">
+          <line x1="300" y1="225" x2="300" y2="55"/><line x1="300" y1="225" x2="420" y2="85"/>
+          <line x1="300" y1="225" x2="490" y2="190"/><line x1="300" y1="225" x2="470" y2="320"/>
+          <line x1="300" y1="225" x2="380" y2="395"/><line x1="300" y1="225" x2="220" y2="395"/>
+          <line x1="300" y1="225" x2="130" y2="320"/><line x1="300" y1="225" x2="110" y2="190"/>
+          <line x1="300" y1="225" x2="180" y2="85"/><line x1="300" y1="225" x2="300" y2="395"/>
+        </g>
+        <rect x="262" y="183" width="76" height="84" fill="#ff5a1f"/>
+        <g fill="#0b3b2a" stroke="#f2c94c" stroke-width="4">
+          <circle cx="300" cy="55" r="22"/><circle cx="420" cy="85" r="22" fill="#f2c94c"/>
+          <circle cx="490" cy="190" r="22"/><circle cx="470" cy="320" r="22"/>
+          <circle cx="380" cy="395" r="22" fill="#f2c94c"/><circle cx="220" cy="395" r="22"/>
+          <circle cx="130" cy="320" r="22"/><circle cx="110" cy="190" r="22" fill="#f2c94c"/>
+          <circle cx="180" cy="85" r="22"/><circle cx="300" cy="395" r="22" opacity="0"/>
+        </g>
+      </svg>
     </div>
-  </section>
+    <h3>Ten new voices</h3><p>Reviewers and creators who talk to your readers.</p>
+  </a>
 
-  <section class="sec" id="plan">
-    <div class="label"><b>03</b>Phase one</div>
-    <div class="body">
-      <h2>Getting the book in front of people who don't know you yet.</h2>
-      <p>Your 5,000 Facebook followers and 3,000 LinkedIn connections are a good foundation, but the campaign shouldn't depend on them. I would work in four parts.</p>
-
-      <h3>A. Search and discoverability</h3>
-      <p>Research the terms people use around first-time managers and leadership, tighten the wording of the book and author pages, and make sure every promotional link leads to the right place to buy. This is slow, foundational work. A few edits will not put the book at the top of Google overnight, and I won't say they will.</p>
-
-      <h3>B. Book influencers and reviewers</h3>
-      <p>I would contact at least ten relevant creators, after reading what they actually feature, not with one copied message. Some will decline, some won't answer. I will report real responses, and an unanswered message is not a result. If anyone wants payment for a feature, it comes to you for approval first, and I won't buy reviews. Each reviewer's independence stays intact.</p>
-
-      <h3>C. Content worth stopping for</h3>
-      <p>A cover image with an Amazon link isn't enough. I would make graphics from the five frameworks and fifteen chapters, the questions new managers keep asking, and the mistakes people make when they first lead a team, each adapted to the platform it appears on.</p>
-
-      <h3>D. A book trailer, $50</h3>
-      <p>One short trailer reusable across Facebook, Instagram, LinkedIn and YouTube. You were worried about it looking obviously AI-made, and I share that worry. The writing, pacing and typography should suit a serious management book. You will see the direction before I finalise it, and I'll send two relevant examples so you can judge the work.</p>
+  <a class="tile s4" href="#plan">
+    <div class="img">
+      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="450" fill="#ff5a1f"/>
+        <g transform="rotate(-9 300 225)"><rect x="130" y="90" width="240" height="260" fill="#f2c94c"/></g>
+        <g transform="rotate(6 300 225)"><rect x="190" y="70" width="240" height="260" fill="#0b3b2a"/>
+          <text x="215" y="190" font-family="Archivo,sans-serif" font-weight="800" font-size="110" fill="#fff">“</text>
+          <rect x="215" y="215" width="150" height="12" fill="#fff"/><rect x="215" y="240" width="110" height="12" fill="#fff"/></g>
+        <text x="60" y="410" font-family="Archivo,sans-serif" font-weight="800" font-size="40" fill="#111">5 frameworks · 15 chapters</text>
+      </svg>
     </div>
-  </section>
+    <h3>Things worth sharing</h3><p>Lessons from the book, made to stop a scroll.</p>
+  </a>
 
-  <section class="sec" id="tracking">
-    <div class="label"><b>04</b>Knowing what worked</div>
-    <div class="body">
-      <h2>Ten messages are activity. A purchase is a sale.</h2>
-      <p>An influencer may reach 20,000 followers, and that number alone doesn't tell us if anyone bought. So I would set up tracking before spending more.</p>
-      <ol class="list">
-        <li><i>1</i><div><strong>A landing page</strong><span>Clean, mobile-friendly, and a single place to send every channel's traffic.</span></div></li>
-        <li><i>2</i><div><strong>Trackable links</strong><span>Tagged links and Amazon Attribution where the retailer supports it, so channels can be compared by sales, not likes.</span></div></li>
-        <li><i>3</i><div><strong>A small retargeting test</strong><span>On Meta, only once there is enough traffic and permission to track, and kept separate so we can see its cost.</span></div></li>
-        <li><i>4</i><div><strong>Plain reporting</strong><span>Work done, responses, traffic, attributable purchases and what I recommend next.</span></div></li>
-      </ol>
-      <div class="chain">
-        <div><b>Activity</b>10 outreach messages</div>
-        <div><b>Placement</b>1 confirmed feature</div>
-        <div><b>Sale</b>1 verified purchase</div>
-      </div>
-      <h3>Institutional sales</h3>
-      <p>For a company training 50 new managers, buying is a different decision from one person buying a Kindle copy. I would prepare a separate pitch on how the book works in onboarding, workshops and development programmes, aimed at specific decision-makers, not hundreds of inboxes. Your contact in Egypt is a reason to look abroad, but I'd find the right audience and route to purchase before spending anything there.</p>
+  <a class="tile s4" href="#plan">
+    <div class="img">
+      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="450" fill="#111"/>
+        <rect x="70" y="70" width="460" height="259" fill="#0b3b2a"/>
+        <circle cx="300" cy="200" r="52" fill="#ff5a1f"/>
+        <path d="M285 172l50 28-50 28z" fill="#fff"/>
+        <rect x="70" y="360" width="460" height="8" fill="#333"/>
+        <rect x="70" y="360" width="170" height="8" fill="#f2c94c"/>
+        <circle cx="240" cy="364" r="10" fill="#f2c94c"/>
+      </svg>
     </div>
-  </section>
+    <h3>A short trailer</h3><p>Serious in tone, so it doesn't look machine-made. $50.</p>
+  </a>
 
-  <section class="sec" id="budget">
-    <div class="label"><b>05</b>Budget</div>
-    <div class="body">
-      <h2>A small first commitment.</h2>
-      <table class="tbl">
-        <thead><tr><th>Deliverable</th><th>Cost</th></tr></thead>
-        <tbody>
-          <tr><td>Initial campaign<small>Search work, outreach to 10+ creators, promotional graphics, planning and tracking setup</small></td><td>$500</td></tr>
-          <tr><td>Book trailer<small>One time</small></td><td>$50</td></tr>
-          <tr><td>Landing page<small>One time, using your existing book information, cover and retailer links</small></td><td>$150</td></tr>
-          <tr class="sum"><td>Total</td><td>$700</td></tr>
-        </tbody>
-      </table>
-      <div class="note"><b>Not included</b>Paid advertising and influencer fees. Those stay under your control and are only spent with your approval. Custom integrations or paid software on the landing page would be agreed separately.</div>
+  <a class="tile s4" href="#plan">
+    <div class="img">
+      <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="600" height="450" fill="#e9e4d9"/>
+        <rect x="90" y="50" width="420" height="350" fill="#fff" stroke="#111" stroke-width="4"/>
+        <rect x="90" y="50" width="420" height="36" fill="#111"/>
+        <circle cx="112" cy="68" r="6" fill="#ff5a1f"/><circle cx="132" cy="68" r="6" fill="#f2c94c"/><circle cx="152" cy="68" r="6" fill="#9fc3b2"/>
+        <rect x="120" y="120" width="110" height="150" fill="#0b3b2a"/>
+        <rect x="255" y="124" width="200" height="16" fill="#111"/><rect x="255" y="152" width="160" height="12" fill="#bbb"/>
+        <rect x="255" y="176" width="180" height="12" fill="#bbb"/>
+        <rect x="255" y="226" width="130" height="44" fill="#ff5a1f"/>
+        <rect x="120" y="300" width="340" height="12" fill="#ddd"/><rect x="120" y="326" width="260" height="12" fill="#ddd"/>
+      </svg>
     </div>
-  </section>
+    <h3>One home for every link</h3><p>A simple page that sends people to buy. $150.</p>
+  </a>
 
-  <section class="sec" id="pay">
-    <div class="label"><b>06</b>Payment</div>
-    <div class="body">
-      <h2>You suggested $2,500 for 1,000 copies. Here is a version of that.</h2>
-      <p><strong>Option A.</strong> After the setup fees, I take <span class="hl">30% of your net author earnings from incremental sales that can reasonably be attributed to the campaign</span>. At your stated $7.50 per copy:</p>
-      <table class="tbl">
-        <thead><tr><th>Incremental copies</th><th>You earn</th><th>My 30%</th></tr></thead>
-        <tbody>
-          <tr><td>100</td><td>$750</td><td>$225</td></tr>
-          <tr><td>250</td><td>$1,875</td><td>$562.50</td></tr>
-          <tr><td>500</td><td>$3,750</td><td>$1,125</td></tr>
-          <tr><td>1,000</td><td>$7,500</td><td>$2,250</td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:.9em;color:var(--muted)">Illustrations, not forecasts. If your earnings differ by format, retailer, territory or bulk terms, the real figures apply.</p>
-      <h3>What counts as "incremental"?</h3>
-      <p>We agree this before anything starts. We set a baseline from your sales history, then credit what campaign links, retailer attribution, referrals and identifiable bulk orders show. I won't claim every sale during the campaign. Your own posts and word of mouth sell books too. Returns, cancellations and costs are handled the same way every time, and we review the numbers together.</p>
-      <p><strong>Option B</strong> is a fixed monthly fee for a defined scope. Costs are predictable, but you pay whether or not sales follow. Given what you told me, I think Option A is the better start.</p>
+</section>
+
+<!-- TRACKING -->
+<div class="hd" id="track"><h2>Knowing what actually sold</h2><span>Real purchases, not likes</span></div>
+<section class="grid">
+  <a class="tile s12" href="#track">
+    <div class="img">
+      <svg viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="1200" height="450" fill="#0b3b2a"/>
+        <polygon points="80,60 1120,60 960,150 240,150" fill="#2f7a5a"/>
+        <polygon points="240,165 960,165 840,255 360,255" fill="#4f9374"/>
+        <polygon points="360,270 840,270 740,350 460,350" fill="#f2c94c"/>
+        <polygon points="460,365 740,365 690,425 510,425" fill="#ff5a1f"/>
+        <g font-family="Archivo,sans-serif" font-weight="800" font-size="34" fill="#fff" text-anchor="middle">
+          <text x="600" y="115">Saw it</text><text x="600" y="220">Clicked</text>
+          <text x="600" y="320" fill="#111">Came back</text><text x="600" y="406" fill="#111" font-size="28">Bought</text>
+        </g>
+      </svg>
     </div>
-  </section>
+    <h3>From “saw it” to “bought it”</h3><p>Ten messages sent is activity. One verified purchase is a sale.</p>
+  </a>
 
-  <section class="sec">
-    <div class="label"><b>07</b>First thirty days</div>
-    <div class="body">
-      <h2>Build it, test it, then decide.</h2>
-      <p>No campaign can guarantee a sales figure, and I won't pretend this one can.</p>
-      <div class="weeks">
-        <div><b>Week 1</b><h3>Prepare</h3><p>Review existing book pages, find search terms, set the sales baseline, build the landing page and first assets.</p></div>
-        <div><b>Week 2</b><h3>Reach out</h3><p>Start influencer outreach, publish the first content, and check the links and tracking work.</p></div>
-        <div><b>Week 3</b><h3>Read the signals</h3><p>See who replied, follow up with promising contacts and begin institutional prospecting.</p></div>
-        <div><b>Week 4</b><h3>Decide</h3><p>Keep what is working, drop what isn't, and run a small retargeting test if the traffic supports it.</p></div>
-      </div>
+  <a class="tile s6" href="#track">
+    <div class="img">
+      <svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="700" height="525" fill="#ff5a1f"/>
+        <g fill="#111">
+          <!-- 10 x 5 books -->
+        </g>
+        <g id="books"></g>
+        <text x="40" y="490" font-family="Archivo,sans-serif" font-weight="800" font-size="64" fill="#111" letter-spacing="-2">1 order = 50+ copies</text>
+      </svg>
     </div>
-  </section>
+    <h3>Whole teams, one order</h3><p>Companies and chambers who train new managers.</p>
+  </a>
 
-  <section class="sec">
-    <div class="label"><b>08</b>Measures</div>
-    <div class="body">
-      <h2>Not follower counts.</h2>
-      <p>I would judge the work by additional sales and attributable earnings, relevant features and real reader engagement, traffic to purchase pages, the cost of any paid sale, qualified conversations with organisations, and bulk or speaking enquiries. A reviewer may feature the book weeks after I contact them, and a company may take time to approve an order. Those get recorded and followed up, not reported as guaranteed revenue.</p>
-      <h3>What I need from you</h3>
-      <p>Your book links and promotional materials, your sales history for the baseline, any advertising or attribution data you're happy to share, whether you can supply review copies, your bulk-purchase terms, and any publisher restrictions on ads, retailer links or promotion.</p>
+  <a class="tile s6" href="#track">
+    <div class="img">
+      <svg viewBox="0 0 700 525" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="700" height="525" fill="#f2c94c"/>
+        <circle cx="350" cy="250" r="170" fill="#111"/>
+        <path d="M350 250 L350 80 A170 170 0 0 1 497 335 Z" fill="#ff5a1f"/>
+        <text x="425" y="205" font-family="Archivo,sans-serif" font-weight="800" font-size="56" fill="#111" text-anchor="middle">30%</text>
+        <text x="270" y="300" font-family="Archivo,sans-serif" font-weight="800" font-size="56" fill="#fff" text-anchor="middle">70%</text>
+        <text x="350" y="485" font-family="Archivo,sans-serif" font-weight="600" font-size="26" fill="#111" text-anchor="middle">Philip · Ryan, on sales the campaign earns</text>
+      </svg>
     </div>
-  </section>
+    <h3>I only win when you do</h3><p>After setup, my share is 30% of the extra earnings I can show.</p>
+  </a>
+</section>
 
-  <section class="sign" id="start">
-    <p class="big">Start with a clear plan and let the evidence decide the next step.</p>
-    <p style="margin-top:1.2rem;max-width:56ch">Before any campaign activity, we agree the tracking method, the definition of an incremental sale and the payment terms. You stay in control of ad spend and paid placements.</p>
-    <a class="btn" href="mailto:philip.oladele@philipoladele.com?subject=Book%20campaign%20proposal">Reply to Philip</a>
-    <p class="sig">Philip Oladele<b>Social media strategy, book promotion and digital marketing</b></p>
-  </section>
+<!-- COST -->
+<div class="hd" id="cost"><h2>What it costs to start</h2><span>Ads and paid features are extra, and only with your OK</span></div>
+<section class="nums">
+  <div class="num c-g"><b>$500</b><span>Campaign setup and outreach</span></div>
+  <div class="num c-s"><b>$50</b><span>Book trailer</span></div>
+  <div class="num c-y"><b>$150</b><span>Landing page</span></div>
+  <div class="num c-k"><b>$700</b><span>All in, once</span></div>
+</section>
 
-</main>
+<!-- 30 DAYS -->
+<div class="hd" id="days"><h2>The first 30 days</h2><span>Build, try, decide</span></div>
+<section class="nums">
+  <div class="num c-y"><b>1</b><span>Get the book ready</span></div>
+  <div class="num c-o"><b>2</b><span>Start reaching out</span></div>
+  <div class="num c-s"><b>3</b><span>See who answers</span></div>
+  <div class="num c-g"><b>4</b><span>Keep what works</span></div>
+</section>
+
+<!-- CLOSE -->
+<section class="end" id="hello">
+  <h2>Let's find your next readers.</h2>
+  <div>
+    <p>We agree how we'll measure sales before anything starts.</p>
+    <a class="btn" href="mailto:hello@philipoladele.com?subject=Book%20campaign">Reply to Philip</a>
+  </div>
+</section>
 
 <footer>
-  <span>Prepared for Ryan</span>
-  <a href="https://philipoladele.com/">philipoladele.com</a>
+  <div><h4>Email</h4><a href="mailto:philip.oladele@philipoladele.com">hello@philipoladele.com</a></div>
+  <div><h4>Site</h4><a href="https://philipoladele.com/">philipoladele.com</a></div>
+  <div><h4>Work</h4><p>Social media strategy, book promotion, digital marketing</p></div>
+  <div><h4>For</h4><p>Ryan · No One Comes to Work to Fail</p></div>
+  <a class="top" href="#top" onclick="window.scrollTo({top:0});return false">Back to top</a>
 </footer>
 
+<script>
+// draw the 10 x 5 book grid
+(function(){
+  var g=document.getElementById('books'),ns='http://www.w3.org/2000/svg',h='';
+  for(var r=0;r<5;r++)for(var c=0;c<10;c++){
+    var hot=(r===0&&c<3)||(r===2&&c>5&&c<9);
+    h+='<rect x="'+(40+c*62)+'" y="'+(50+r*76)+'" width="46" height="62" fill="'+(hot?'#f2c94c':'#0b3b2a')+'"/>';
+  }
+  g.innerHTML=h;
+  // gentle reveal
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.tile,.num').forEach(function(el,i){
+    el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+})();
+</script>
 </body>
 </html>
